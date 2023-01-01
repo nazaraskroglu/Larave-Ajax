@@ -19,7 +19,7 @@ class isLogin
      */
     public function handle(Request $request, Closure $next)
     {
-      if(Auth::check()){   //giriş olup olmadığını kontrol eder "giriş varsa->panel 'e yönlendirsin" .
+      if(Auth::check()){
         return redirect()->route('index');
       }
         return $next($request);

@@ -166,7 +166,10 @@
             confirm("Are you sure want to delete!");
             $.ajax({
                 type:"POST",
-                url:"/destroy/"+id,
+                url:"{{route('destroy')}}",
+                data:{
+                    id:id
+                },
                 dataType: "json",
                 headers: {'X-CSRF-TOKEN': "{{csrf_token()}} "},
                 contentType: false,

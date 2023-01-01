@@ -77,15 +77,14 @@ class StudentController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'surname' => 'required',
+            'name' => 'required|min:3',
+            'surname' => 'required|min:3',
             'city' => 'required',
         ]);
         Student::where('id', $request->id)->update([
             'name' => $request->name,
             'surname' => $request->surname,
             'city' => $request->city,
-            'email' => $request->mail,
         ]);
         return response()->json(['Success' => 'success']);
     }

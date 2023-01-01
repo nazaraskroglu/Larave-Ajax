@@ -16,13 +16,13 @@ class UserTest extends TestCase
      */
     public function test_users_index_page_status()
     {
-        $response = $this->get('/user/index');
+        $response = $this->get('/user');
         $response->assertOk();
     }
     public function test_users_new_resource_is_created()
     {
         $response = $this->post('/user/store');
-        $response->assertRedirect("/user/index");
+        $response->assertRedirect("/user");
 
     }
 
